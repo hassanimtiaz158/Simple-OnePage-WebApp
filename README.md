@@ -20,47 +20,9 @@ This is a simple product webpage built using **HTML, CSS, and JavaScript**. The 
 * DummyJSON API
 * Vercel for deployment
 
-## Errors I Faced
 
-### 1. Products were not displaying
+## Fetch and Search
 
-Initially, I used:
+I use `fetch()` to get the product data from the DummyJSON API. After receiving the response, I extract the products and display them on the page.
 
-```javascript
-products = await response.json();
-```
-
-and tried to use `.forEach()` directly on the response.
-
-The problem was that DummyJSON returns an object containing the products inside the `products` property.
-
-### Solution
-
-I changed it to:
-
-```javascript
-const data = await response.json();
-products = data.products;
-```
-
-Now `products` is an array, so `.forEach()` works correctly.
-
-### 2. Product images were not displaying
-
-I initially used the wrong image property from another API structure.
-
-DummyJSON provides the product image through:
-
-```javascript
-product.thumbnail
-```
-
-So I changed the image source to:
-
-```javascript
-<img src="${product.thumbnail}" alt="${product.title}">
-```
-
-## Deployment
-
-The project is deployed on Vercel.
+For search, I listen for changes in the search bar and filter the products by their title. Only products matching the entered text are displayed.
