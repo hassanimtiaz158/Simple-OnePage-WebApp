@@ -58,36 +58,35 @@ function displayProducts(productsToDisplay) {
         productCard.className = "product-card";
 
         productCard.innerHTML = `
-            <img 
-                src="${product.image}" 
-                alt="${product.title}"
-                class="product-image"
-            >
+    <img 
+        src="${product.thumbnail}" 
+        alt="${product.title}"
+        class="product-image"
+    >
 
-            <h2 class="product-title">
-                ${product.title}
-            </h2>
+    <h2 class="product-title">
+        ${product.title}
+    </h2>
 
-            <p class="product-category">
-                Category: ${product.category}
-            </p>
+    <p class="product-category">
+        Category: ${product.category}
+    </p>
 
-            <p class="product-price">
-                $${product.price}
-            </p>
+    <p class="product-price">
+        $${product.price}
+    </p>
 
-            <p class="product-rating">
-                ⭐ ${product.rating.rate}
-                (${product.rating.count} reviews)
-            </p>
+    <p class="product-rating">
+        ⭐ ${product.rating}
+    </p>
 
-            <button 
-                class="favorite-product-button"
-                data-id="${product.id}"
-            >
-                ${isFavorite ? "❤️ Remove Favorite" : "🤍 Add Favorite"}
-            </button>
-        `;
+    <button 
+        class="favorite-product-button"
+        data-id="${product.id}"
+    >
+        ${isFavorite ? "❤️ Remove Favorite" : "🤍 Add Favorite"}
+    </button>
+`;
 
         productContainer.appendChild(productCard);
     });
