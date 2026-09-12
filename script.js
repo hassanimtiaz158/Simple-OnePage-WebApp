@@ -22,7 +22,10 @@ async function fetchProducts() {
             throw new Error("Failed to fetch products");
         }
 
-        products = await response.json();
+        const data = await response.json();
+
+        products = data.products;
+
         displayProducts(products);
 
     } catch (error) {
