@@ -1,4 +1,4 @@
-const API_URL = "https://fakestoreapi.com/products";
+const API_URL = "https://dummyjson.com/products";
 
 const searchBar = document.getElementById("searchbar");
 const favoriteButton = document.getElementById("favbutton");
